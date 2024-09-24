@@ -98,3 +98,27 @@ public class SearchTree implements NodeList{
             }
             
         }
+        else {
+            
+            ListItem current = deleteNode.next();
+            ListItem leftMostParent = deleteNode;
+     
+            while (current.previous() != null) {
+                
+                leftMostParent = current;
+                current = current.previous();
+            }
+     
+            deleteNode.setValue(current.getValue());
+     
+            if (leftMostParent == deleteNode) {
+                
+                deleteNode.setNext(current.next());
+            } else {
+                
+                leftMostParent.setPrevious(current.next());
+            }
+        }
+        
+        
+    }
