@@ -118,7 +118,19 @@ public class SearchTree implements NodeList{
                 
                 leftMostParent.setPrevious(current.next());
             }
-        }
-        
+        }        
         
     }
+
+    @Override
+    public void traverse(ListItem root) {
+
+        if (root == null) {
+            return;
+        }
+        
+        traverse(root.previous());
+        System.out.println(root.getValue());
+        traverse(root.next());
+    }
+}
