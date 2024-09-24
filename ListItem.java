@@ -8,3 +8,9 @@ public abstract class ListItem {
         
         this.value = value;
     }
+
+    abstract ListItem next();
+    abstract ListItem setNext(ListItem rightLink);
+    abstract ListItem previous();
+    abstract ListItem setPrevious(ListItem leftLink);
+    abstract int compareTo(ListItem other);
