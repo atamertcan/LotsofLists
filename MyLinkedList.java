@@ -39,3 +39,25 @@ public class MyLinkedList implements NodeList{
             return false;
         }
     }
+
+    @Override
+    public boolean removeItem(ListItem node) {
+        
+        if (root == null || node == null) {
+            return false;
+        }
+        while (true) {
+            
+            if (node.compareTo(root) == 0) {
+                
+                root.previous().setNext(null);
+                return true;
+            }
+            
+            root = root.next();
+            
+            if (root == null) {
+                return false;
+            }
+        }
+    }
