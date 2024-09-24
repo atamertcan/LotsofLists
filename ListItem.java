@@ -14,3 +14,13 @@ public abstract class ListItem {
     abstract ListItem previous();
     abstract ListItem setPrevious(ListItem leftLink);
     abstract int compareTo(ListItem other);
+
+    public Object getValue(){
+        return value;
+    }
+    
+    public void setValue(Object value){
+        this.value = value;
+    }
+   
+}
