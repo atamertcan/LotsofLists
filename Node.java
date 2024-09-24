@@ -8,3 +8,13 @@ public class Node extends ListItem{
     ListItem next(){
         return rightLink;
     }
+
+    @Override
+    ListItem setNext(ListItem rightLink){
+        return this.rightLink = rightLink;
+    }
+    
+    @Override
+    ListItem previous(){
+        return leftLink;
+    }
