@@ -64,3 +64,37 @@ public class SearchTree implements NodeList{
             root = root.next();
         }
     }
+
+    private void performRemoval(ListItem deleteNode, ListItem parent){
+        
+        if(deleteNode.next() == null){
+            
+            if (parent.next() == deleteNode){
+                
+                parent.setNext(deleteNode.previous());
+            }
+            else if (parent.previous() == deleteNode){
+                
+                parent.setPrevious(deleteNode.previous());
+            }
+            else{
+                
+                root = deleteNode.previous();
+            }
+        }
+        else if(deleteNode.previous() == null){
+            
+            if (parent.next() == deleteNode){
+                
+                parent.setNext(deleteNode.next());
+            }
+            else if (parent.previous() == deleteNode){
+                
+                parent.setPrevious(deleteNode.next());
+            }
+            else {
+                
+                root = deleteNode.next();
+            }
+            
+        }
