@@ -38,3 +38,29 @@ public class SearchTree implements NodeList{
             return false;
         }
     }
+
+    @Override
+    public boolean removeItem(ListItem node) {
+        
+        if (node == null || root == null) {
+            return false;
+        }
+ 
+        ListItem previous = null;
+        
+        while (true) {
+            
+            if (node.compareTo(root) == 0) {
+                
+                performRemoval(node, previous);
+                return true;
+            }
+ 
+            if (root.next() == null) {
+                return false;
+            }
+            
+            previous = root;
+            root = root.next();
+        }
+    }
